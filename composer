@@ -1,4 +1,4 @@
-Php /home/web/retorr-portal/vsfiles.by/ composer update
+Php /home/.../ composer update
 _________________________________________________________________
-cd /home/web/retorr-portal/vsfiles.by/
+cd /home/.../
 composer update
