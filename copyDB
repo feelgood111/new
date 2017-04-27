@@ -1,0 +1,2 @@
+CREATE TABLE recipes_cat_2 LIKE recipes_cat;
+INSERT recipes_cat_2 SELECT * FROM recipes_cat;
