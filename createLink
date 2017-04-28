@@ -1,1 +1,4 @@
-ln -s /home/web/retorr-portal/new24video.by/web/img /home/web/retorr-portal/portal.new24video.by/web/img
+ln -s /path_to_folder /path_from_folder_link
+
+/path_to_folder           <-- на что будем указывать
+/path_from_folder_link    <-- папка в которой создадим ссылку
