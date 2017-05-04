@@ -1,0 +1,1 @@
+create index recipe_id ON recipes_items (recipe_id);
