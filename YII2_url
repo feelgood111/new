@@ -1,0 +1,40 @@
+1. В корневой директории создайте файл .htaccess  со следующим содержимым:
+
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    RewriteEngine On
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_URI} ^/.*
+    RewriteRule ^(.*)$ web/$1 [L]
+
+    RewriteCond %{REQUEST_URI} !^/web/
+    RewriteCond %{REQUEST_FILENAME} !-f [OR]
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^.*$ web/index.php
+</IfModule>
+
+2. В директории web вашего проекта на Yii 2 basic также создайте файл .htaccess , но уже с несколько другим содержимым:
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php
+
+3. Измените файл /config/web.php добавив в раздел ‘request’ значение 'baseUrl'  пустую строку '' , т.е.:
+
+
+'request' => [
+    'baseUrl' => '',
+],
+
+Затем в этом же файле нужно добавить настройки 'urlManager' , как показано ниже
+
+'urlManager' => [
+    'enablePrettyUrl' => true,
+    'showScriptName' => false,
+    'rules' => [
+        '' => 'site/index',
+        '<action>'=>'site/<action>',
+    ],
+],
