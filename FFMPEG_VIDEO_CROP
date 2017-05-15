@@ -1,0 +1,1 @@
+for %f in ("*.mp4") do ffmpeg -ss 00:22 -t 00:22 -i "%f" -vcodec copy -acodec copy -y "%~dpfnew-%~nxf"
