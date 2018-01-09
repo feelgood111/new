@@ -1,0 +1,2 @@
+select t.t_user_id, t.status, t.last_updated, u.phone from t_user_chat t, t_user u WHERE t.t_user_id = u.id " +
+            "ORDER BY t.status = 'open' DESC, t.status = 'in process' DESC, t.status = 'close' DESC
